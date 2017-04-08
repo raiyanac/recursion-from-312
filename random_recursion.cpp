@@ -151,7 +151,7 @@ int numOfDigits(int n) {
 }
 
 int main(void){
-	printf("testing isLinear\n");
+    printf("testing isLinear\n");
     bool if8 = isLinear(8, 3, 5);
     bool if9 = isLinear(9, 3, 5);
     bool if10 = isLinear(10, 3, 5);
@@ -160,7 +160,7 @@ int main(void){
     bool if58 = isLinear(58, 15, 4);
     printf("1: %d, 1: %d, 1: %d, 0: %d, 1: %d, 0: 0\n", if8, if9, if10, if7, if57, if58);
 
-	printf("testing substr\n");
+    printf("testing substr\n");
     char* s1 = "abc";
     char* s2 = "xabcx";
     printf("1: %d\n", substr(s1, s2, false));
@@ -175,12 +175,12 @@ int main(void){
     s1 = "b";
     printf("1: %d\n", substr(s1, s2, false));
 
-	printf("testing isDivis\n");
+    printf("testing isDivis\n");
     printf("1: %d\n0: %d\n1: %d\n0: %d\n0: %d\n0: %d\n1: %d\n1: %d\n0: %d\n", 
     	isDivis(9,8), isDivis(17,16), isDivis(57,56), isDivis(59,58), isDivis(101,100), 
     	isDivis(97,96), isDivis(98, 96), isDivis(25,5), isDivis(25,4));
 
-	printf("testing subseq()\n");
+    printf("testing subseq()\n");
     char* seq = "abc";
     char* str1 = "I know my abc's";
     printf("1: %d\n", subseq(seq, str1));
@@ -189,7 +189,7 @@ int main(void){
     str1 = "apple crumb pie";
     printf("0: %d\n", subseq(seq, str1));
 
-	printf("testing the rindex function\n");
+    printf("testing the rindex function\n");
     char x[] = {'A', 'y', 'y', 'o', '\0'};
     char* str2 = rindex(x, 'y');
     //returned pointer should point to the second y
