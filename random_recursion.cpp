@@ -124,8 +124,8 @@ bool substr (char* s1, char* s2, bool flag) {
     if (s1[0] == '\0') 
     	return true;
     if (s1[0] == s2[0]) { 
-        int ret1 = substr(s1+1, s2+1, true);
-        int ret2 = substr(s1, s2+1, false);
+        bool ret1 = substr(s1+1, s2+1, true);
+        bool ret2 = substr(s1, s2+1, false);
         return ret1||ret2;
     }
     else if (s2[0] == '\0') {
