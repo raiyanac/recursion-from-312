@@ -104,12 +104,32 @@ bool isLinear(int x, int a, int b) {
 
 //This checks if s1 is a substring of s2 (common letters must be consecutive in s2)
 //Uses a helpful boolean flag parameter that is "triggered" when it seems a substring is found
-bool substr (char* s1, char* s2, bool flag) {
+/*bool substr (char* s1, char* s2, bool flag) {
     if (s1[0] == '\0') 
     	return true;
     if (s1[0] == s2[0]) { 
         flag = true;
         return substr(s1+1, s2+1, flag);
+    }
+    else {
+        if (flag == false) 
+        	return substr(s1, s2+1, flag);
+        else 
+        	return false;
+    }
+}*/
+
+//The previous implementation wouldn't work for something like s1 = "bat", s2 = "abigbadbat"
+bool substr (char* s1, char* s2, bool flag) {
+    if (s1[0] == '\0') 
+    	return true;
+    if (s1[0] == s2[0]) { 
+        int ret1 = substr(s1+1, s2+1, true);
+        int ret2 = substr(s1, s2+1, false);
+        return ret1||ret2;
+    }
+    else if (s2[0] == '\0') {
+        return 0;
     }
     else {
         if (flag == false) 
